@@ -7,9 +7,9 @@ navios_info = {"porta-aviões": {"tamanho": 4, "quantidade": 1},"navio-tanque": 
 for nome_navio, info in navios_info.items():
     for i in range(info["quantidade"]):
         posicao_valida_flag = False
-        print(f"Insira as informações referentes ao navio {nome_navio} que possui tamanho {info['tamanho']}", end=" ")
+        
         while not posicao_valida_flag:
-           
+            print(f"Insira as informações referentes ao navio {nome_navio} que possui tamanho {info['tamanho']}", end=" ")
             linha = int(input("Linha: "))
             coluna = int(input("Coluna: "))
 
