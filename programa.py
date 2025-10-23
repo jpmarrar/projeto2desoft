@@ -4,12 +4,15 @@ frota = {"porta-aviões": [], "navio-tanque": [], "contratorpedeiro": [], "subma
 
 navios_info = {"porta-aviões": {"tamanho": 4, "quantidade": 1},"navio-tanque": {"tamanho": 3, "quantidade": 2},"contratorpedeiro": {"tamanho": 2, "quantidade": 3},"submarino": {"tamanho": 1, "quantidade": 4}}
 
-for nome_navio, info in navios_info.items():
-    for i in range(info["quantidade"]):
+ordem = ["porta-aviões", "navio-tanque", "contratopedreiro", "submarino"]
+
+for nome_navio in ordem:
+    info = navios_info[nome_navio]
+    for _ in range(info["quantidade"]):
         posicao_valida_flag = False
         
         while not posicao_valida_flag:
-            print(f"Insira as informações referentes ao navio {nome_navio} que possui tamanho {info['tamanho']}", end=" ")
+            print(f"Insira as informações referentes ao navio {nome_navio} que possui tamanho {info['tamanho']}")
             linha = int(input("Linha: "))
             coluna = int(input("Coluna: "))
 
@@ -23,6 +26,6 @@ for nome_navio, info in navios_info.items():
                 frota = preenche_frota(frota, nome_navio, linha, coluna, orientacao, info["tamanho"])
                 posicao_valida_flag = True
             else:
-                print("Esta posição não está válida!", end=" ")
+                print("Esta posição não está válida!")
 
-print(f"{frota}", end="")
+print(f"{frota}")
