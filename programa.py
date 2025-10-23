@@ -1,4 +1,5 @@
-from funcoes import *
+from funcoes import define_posicoes, preenche_frota, posicao_valida
+
 frota = {}
 tipos_de_navios = { 
     "porta-aviões": (4,1),
