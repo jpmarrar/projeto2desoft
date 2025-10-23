@@ -7,35 +7,31 @@ frota = {
     "submarino": []
 }
 
-navios_info = {
-    "porta-aviões": {"tamanho": 4, "quantidade": 1},
-    "navio-tanque": {"tamanho": 3, "quantidade": 2},
-    "contratorpedeiro": {"tamanho": 2, "quantidade": 3},
-    "submarino": {"tamanho": 1, "quantidade": 4}
-}
+ordem = [
+    ("porta-aviões", 4, 1),
+    ("navio-tanque", 3, 2),
+    ("contratorpedeiro", 2, 3),
+    ("submarino", 1, 4)
+]
 
-for nome_navio, info in navios_info.items():
-    for i in range(info["quantidade"]):
-        posicao_valida_flag = False
-        while not posicao_valida_flag:
-            print(f"Insira as informações referentes ao navio {nome_navio} que possui tamanho {info['tamanho']}", end=" ")
+for nome, tamanho, quantidade in ordem:
+    for _ in range(quantidade):
+        valido = False
+        while not valido:
+            print(f"Insira as informações referentes ao navio {nome} que possui tamanho {tamanho}")
+            linha = int(input())
+            coluna = int(input())
 
-            linha = int(input("Linha: "))
-            coluna = int(input("Coluna: "))
-
-            if nome_navio != "submarino":
-                orientacao_input = int(input("[1] Vertical [2] Horizontal >"))
-                if orientacao_input == 1:
-                    orientacao = "vertical"
-                else:
-                    orientacao = "horizontal"
+            if nome == "submarino":
+                orientacao = "vertical"  # tanto faz; submarino ocupa uma célula
             else:
-                orientacao = "vertical"
+                orient = int(input())  # 1 ou 2, mas sem imprimir prompt
+                orientacao = "vertical" if orient == 1 else "horizontal"
 
-            if posicao_valida(frota, linha, coluna, orientacao, info["tamanho"]):
-                frota = preenche_frota(frota, nome_navio, linha, coluna, orientacao, info["tamanho"])
-                posicao_valida_flag = True
+            if posicao_valida(frota, linha, coluna, orientacao, tamanho):
+                preenche_frota(frota, nome, linha, coluna, orientacao, tamanho)
+                valido = True
             else:
-                print("Esta posição não está válida!", end=" ")
+                print("Esta posição não está válida!")
 
-print(f"{frota}", end="")
+print(frota)
