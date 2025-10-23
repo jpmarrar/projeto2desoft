@@ -1,12 +1,8 @@
 def define_posicoes(linha, coluna, orientacao, tamanho):
     lista = []
-    i = 1
-    while i < tamanho:
-        cord = []
+    for i in range(tamanho):
         if orientacao == "horizontal":
-            cord = [linha, coluna + (i-1)]
+            lista.append([linha, coluna + i])
         elif orientacao == "vertical":
-            cord = [linha + (i-1), coluna]
-        lista.append(cord)
-        i += 1
+            lista.append([linha + i, coluna])
     return lista
