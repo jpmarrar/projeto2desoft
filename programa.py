@@ -1,18 +1,8 @@
 from funcoes import define_posicoes, preenche_frota, posicao_valida
 
-frota = {
-    "porta-aviões": [],
-    "navio-tanque": [],
-    "contratorpedeiro": [],
-    "submarino": []
-}
+frota = {"porta-aviões": [],"navio-tanque": [],"contratorpedeiro": [],"submarino": []}
 
-navios_info = {
-    "porta-aviões": {"tamanho": 4, "quantidade": 1},
-    "navio-tanque": {"tamanho": 3, "quantidade": 2},
-    "contratorpedeiro": {"tamanho": 2, "quantidade": 3},
-    "submarino": {"tamanho": 1, "quantidade": 4}
-}
+navios_info = {"porta-aviões": {"tamanho": 4, "quantidade": 1},"navio-tanque": {"tamanho": 3, "quantidade": 2},"contratorpedeiro": {"tamanho": 2, "quantidade": 3},"submarino": {"tamanho": 1, "quantidade": 4}}
 
 for nome_navio, info in navios_info.items():
     for i in range(info["quantidade"]):
