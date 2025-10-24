@@ -1,3 +1,5 @@
+from funcoes import *
+
 frota = {}
 
 navios = [
