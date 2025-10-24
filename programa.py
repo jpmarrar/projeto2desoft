@@ -1,5 +1,3 @@
-from funcoes import *
-
 frota = {}
 
 navios = [
@@ -16,7 +14,6 @@ for nome, tamanho, quantidade in navios:
             linha = int(input("Linha: "))
             coluna = int(input("Coluna: "))
 
-            # Submarino não precisa perguntar orientação
             if nome == "submarino":
                 orientacao = "vertical"  # tanto faz para tamanho 1
             else:
