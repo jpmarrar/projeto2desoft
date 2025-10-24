@@ -17,7 +17,7 @@ for nome, tamanho, quantidade in navios:
             coluna = int(input("Coluna: "))
 
             if nome == "submarino":
-                orientacao = "vertical"  # tanto faz para tamanho 1
+                orientacao = "vertical"
             else:
                 opc = int(input("[1] Vertical [2] Horizontal >"))
                 while opc not in (1, 2):
