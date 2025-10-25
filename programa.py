@@ -24,7 +24,7 @@ for nome, tamanho, quantidade in navios_info:
         if tamanho == 1:
             orientacao = 'vertical'
         else:
-            orientacao_num = int(input("[1] Vertical [2] Horizontal >"))
+            orientacao_num = int(input("."))
             if orientacao_num == 1:
                 orientacao = 'vertical'
             else:
